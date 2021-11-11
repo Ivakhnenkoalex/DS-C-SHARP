@@ -1,0 +1,118 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Metro
+{
+    public class Station
+    {
+        public string name;
+        public string color;
+        public Line line;
+        public bool isWheelchairAccessible;
+        public bool hasParkAndRide;
+        public bool hasNearbyCableCar;
+        public List<Station> transfers;
+        public void station(string name, string color)
+        {
+            this.name = name;
+            this.color = color;
+        }
+        public string GetName()
+        {
+            return name;
+        }
+        public void SetName(string name)
+        {
+            this.name = name;
+        }
+        public bool isWheelchairAccessibl()
+        {
+            return isWheelchairAccessible;
+        }
+        public bool hasParkAndRid()
+        {
+            return hasParkAndRide;
+        }
+        public bool hasNearbyCableCa()
+        {
+            return hasNearbyCableCar;
+        }
+        public string GetLineName()
+        {
+            
+        }
+        public List<Station> GetTransferList()
+        {
+            return transfers;
+        }
+    }
+
+
+
+
+
+
+
+    public class Line
+    {
+        List<Station> stations;
+        string name;
+        string color;
+
+        public Line(string name,string color)
+        {
+            this.name = name;
+            this.color = color;
+        }
+        public string GetStation()
+        {
+            return Station.GetName();
+        }
+        public void SetName(string name)
+        {
+            
+        }
+    }
+
+
+
+
+    public class Metro
+    {
+        string city;
+        List<Line> lines;
+        public Metro(string city)
+        {
+            this.city = city;
+        }
+        public string GetCity()
+        {
+            return city;
+        }
+        public void AddLine(string name, string color)
+        {
+            Line line = new Line(name, color);
+            lines.Add(line);
+        }
+
+        public void RemoveStation(string name)
+        {
+            lines.Remove(name);
+        }
+
+    }
+
+
+
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
