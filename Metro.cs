@@ -19,6 +19,15 @@ namespace Metro
             this.name = name;
             this.color = color;
         }
+
+        public Station(string name,string color,List<Station> transfers)
+        {
+            this.name = name;
+            this.color = color;
+            this.transfers = transfers;
+        }
+
+
         public string GetName()
         {
             return name;
@@ -110,13 +119,7 @@ namespace Metro
 
         public void RemoveStation(string name)
         {
-            foreach (Station i in stations)
-            {
-                if (i.GetName() == name)
-                {
-                    i.SetName("");
-                }
-            }
+            stations.Remove(name);
         }
 
         public List<Station> GetStationList()
@@ -150,13 +153,7 @@ namespace Metro
 
         public void RemoveLine(string name)
         {
-            foreach (Line i in lines)
-            {
-                if (i.GetName() == name)
-                {
-                    i.SetName("");
-                }
-            }
+            lines.Remove(name);
         }
         public Station FindStation(string name,string lineName)
         {
